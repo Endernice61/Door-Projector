@@ -158,6 +158,18 @@ function assignBeamTemplate(projector,hit) {
 	EntGroup.projector_beam_template.GetScriptScope().distance <- hit;
 }
 
+function xAvailable(projector) {
+	local left = projector.left;
+	local up = projector.up;
+	local origin = projector.center;
+	local dir = projector.forward;
+	local hit = TraceLine(origin+dir*4-up*HALF_HEIGHT-left*HALF_WIDTH,origin+dir*4+up*HALF_HEIGHT+left*HALF_WIDTH,null);
+	if (hit < 1) { return false; }
+	hit = TraceLine(origin+dir*4+up*HALF_HEIGHT-left*HALF_WIDTH,origin+dir*4-up*HALF_HEIGHT+left*HALF_WIDTH,null);
+	if (hit < 1) { return false; }
+	return true;
+}
+
 function project(projector,depth) {
 	//close();
 
@@ -197,14 +209,10 @@ function project(projector,depth) {
 	close();
 
 	//Empty space check in an X shape in a 28x52 area 2 units behind the wall
-	local left = projector.left;
-	local up = projector.up;
-	hit = TraceLine(origin+dir*4-up*HALF_HEIGHT-left*HALF_WIDTH,origin+dir*4+up*HALF_HEIGHT+left*HALF_WIDTH,null);
-	if (hit < 1) return;
-	hit = TraceLine(origin+dir*4+up*HALF_HEIGHT-left*HALF_WIDTH,origin+dir*4-up*HALF_HEIGHT+left*HALF_WIDTH,null);
-	if (hit < 1) return;
+	if (!xAvailable(projector)) { return; }
+	
+	EntFireByHandle(beams[depth],"SetLocalOrigin",(projector.forward*(hit-64)).ToKVString(),0,null,null);
 
-	beams[depth].GetScriptScope().moveBack();
 	::temp_spawner <- self;
 	EntityGroup[5].SpawnEntity();
 
@@ -223,9 +231,9 @@ function project(projector,depth) {
 
 	
 	//Test entry bottom clip
-	if (TraceAll(origin-dir-up*56,up*-1,9) < 9) EntFireByHandle(EntityGroup[4],"FireUser3","",0,null,null);
+	if (TraceAll(origin-dir-projector.up*56,projector.up*-1,9) < 9) EntFireByHandle(EntityGroup[4],"FireUser3","",0,null,null);
 
 	//Test exit bottom clip
-	if (TraceAll(origin+dir*(1+dist)-up*56,up*-1,9) < 9) EntFireByHandle(EntityGroup[4],"FireUser1","",0,null,null);
+	if (TraceAll(origin+dir*(1+dist)-projector.up*56,projector.up*-1,9) < 9) EntFireByHandle(EntityGroup[4],"FireUser1","",0,null,null);
 	
 }
