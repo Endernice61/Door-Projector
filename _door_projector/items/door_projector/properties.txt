@@ -1,0 +1,6 @@
+"Properties" {
+	"Authors" "Hovering Harry"
+	"Description" {
+		"" "Projects holes in thin geometry"
+		}
+}
