@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "8870"
-	"mapversion" "1079"
+	"mapversion" "1080"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -107,7 +107,7 @@ bgimages_plus
 world
 {
 	"id" "1"
-	"mapversion" "1079"
+	"mapversion" "1080"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -2843,8 +2843,6 @@ entity
 	"texture" "sprites/laserbeam.vmt"
 	"texturescroll" "35"
 	"touchtype" "0"
-	"vscript_init_code" "setLocal(30,54,63)"
-	"vscripts" "BEE2/hovering_harry/door_projector_end_beam.nut"
 	"origin" "64 0 -32"
 	editor
 	{
@@ -2887,8 +2885,6 @@ entity
 	"texture" "sprites/laserbeam.vmt"
 	"texturescroll" "35"
 	"touchtype" "0"
-	"vscript_init_code" "setLocal(-30,54,63)"
-	"vscripts" "BEE2/hovering_harry/door_projector_end_beam.nut"
 	"origin" "64 -32 -32"
 	editor
 	{
@@ -2931,8 +2927,6 @@ entity
 	"texture" "sprites/laserbeam.vmt"
 	"texturescroll" "35"
 	"touchtype" "0"
-	"vscript_init_code" "setLocal(-30,-54,63)"
-	"vscripts" "BEE2/hovering_harry/door_projector_end_beam.nut"
 	"origin" "32 -32 -32"
 	editor
 	{
@@ -2975,8 +2969,6 @@ entity
 	"texture" "sprites/laserbeam.vmt"
 	"texturescroll" "35"
 	"touchtype" "0"
-	"vscript_init_code" "setLocal(30,-54,63)"
-	"vscripts" "BEE2/hovering_harry/door_projector_end_beam.nut"
 	"origin" "0 -32 -32"
 	editor
 	{
