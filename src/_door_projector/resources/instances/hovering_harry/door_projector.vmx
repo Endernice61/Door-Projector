@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "8870"
-	"mapversion" "1074"
+	"mapversion" "1079"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -107,7 +107,7 @@ bgimages_plus
 world
 {
 	"id" "1"
-	"mapversion" "1074"
+	"mapversion" "1079"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -227,6 +227,7 @@ entity
 	"group05" "projector_end_spawner"
 	"group06" "projector_beam_template"
 	"group07" "door_frame"
+	"group08" "projector_end_template"
 	"targetname" "projector_script"
 	"vscripts" "BEE2/hovering_harry/door_projector.nut"
 	"origin" "-7.62939e-06 28 -62"
@@ -298,7 +299,6 @@ entity
 	"scale" "0.1"
 	"spawnflags" "1"
 	"targetname" "projector_end"
-	"vscripts" "BEE2/hovering_harry/door_projector_end.nut"
 	"origin" "-4.76837e-07 0 -30"
 	editor
 	{
@@ -321,6 +321,7 @@ entity
 	"template03" "projector_end_beam2"
 	"template04" "projector_end_beam3"
 	"template05" "projector_end_beam4"
+	"vscripts" "BEE2/hovering_harry/door_projector/end_template.nut"
 	"origin" "32 0 -30"
 	editor
 	{
@@ -2801,7 +2802,6 @@ entity
 	"parentname" "beam_start"
 	"spawnflags" "0"
 	"targetname" "beam_end"
-	"vscripts" "BEE2/hovering_harry/door_projector_beam.nut"
 	"origin" "-52 0 -48"
 	editor
 	{
