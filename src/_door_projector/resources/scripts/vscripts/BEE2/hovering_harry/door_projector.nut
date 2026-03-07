@@ -38,8 +38,8 @@ enabled <- 0;
 self.ValidateScriptScope();
 
 const PROJECTION_DISTANCE = 3200;
-const HALF_HEIGHT = 51.97;
-const HALF_WIDTH = 27.97;
+const HALF_HEIGHT = 51.47;
+const HALF_WIDTH = 27.47;
 
 DoIncludeScript("BEE2/hovering_harry/utils",this);
 
@@ -228,11 +228,17 @@ function project(projector,depth) {
 		EntFireByHandle(EntGroup.door_frame,"Enable","",0.01,null,null);
 	}
 
-	
-	//Test entry bottom clip
-	if (TraceAll(origin-dir-projector.up*56,projector.up*-1,9) < 9) EntFireByHandle(EntGroup.door_branch,"FireUser3","",0,null,null);
-
-	//Test exit bottom clip
-	if (TraceAll(origin+dir*(1+dist)-projector.up*56,projector.up*-1,9) < 9) EntFireByHandle(EntGroup.door_branch,"FireUser1","",0,null,null);
-	
+	function clip(offset,up,action) {
+		if (TraceAll(offset+up*56,up,9) < 9) {
+			EntFireByHandle(EntGroup.door_branch,action,"",0,null,null);
+		}
+	}
+	//Entry bottom clip
+	clip(origin-dir,projector.up*-1,"FireUser3");
+	//Exit bottom clip
+	clip(origin+dir*(1+dist),projector.up*-1,"FireUser1");
+	//Entry top clip
+	clip(origin-dir,projector.up,"FireUser4");
+	//Exit top clip
+	clip(origin+dir*(1+dist),projector.up,"FireUser2");
 }
