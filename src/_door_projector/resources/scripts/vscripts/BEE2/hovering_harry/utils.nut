@@ -1,4 +1,5 @@
 DoIncludeScript("BEE2/hovering_harry/cuboid",this);
+DoIncludeScript("BEE2/hovering_harry/matrix",this);
 
 class Position {
 	center = Vector(0,0,0)
