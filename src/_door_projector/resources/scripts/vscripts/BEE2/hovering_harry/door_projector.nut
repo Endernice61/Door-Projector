@@ -64,6 +64,34 @@ function disable() {
 	close();
 }
 
+function makeAngles(position) {
+	/*printl("Calculating angles...");
+	printl("Attempting to get up: "+position.up);*/
+	EntGroup.door_branch.SetForwardVector(position.forward);
+	//printl("Up to correct: "+EntGroup.door_branch.GetUpVector());
+	local magnitude = position.up.Dot(EntGroup.door_branch.GetUpVector());
+	//printl("Magnitude of commonality: "+magnitude);
+	local delta = acos(magnitude)*
+		((EntGroup.door_branch.GetLeftVector().Dot(position.up)>0) ? 180/PI : -180/PI);
+	//printl("Delta angle: "+delta);
+	local ang = EntGroup.door_branch.GetAngles();
+	ang.z += delta;
+	//printl("Calculated angle of: "+ang);
+	setAngles(EntGroup.door_branch,ang);
+	//printl("Got up: "+EntGroup.door_branch.GetUpVector());
+	return ang;
+}
+
+function setAngles(handle,angle) {
+	handle.SetAngles(angle.x,angle.y,angle.z);
+}
+
+function portalTransformationMatrix(portal,projector) {
+	local transform = Matrix.fromEntity(projector);
+	transform.transpose();
+	return transform*Matrix([[-1,0,0],[0,1,0],[0,0,-1]])*Matrix.fromEntity(portal);
+}
+
 function projectThroughPortal(portal,entry_point,depth) {
 	local projector = findLinkedPortal(portal);
 	
@@ -74,8 +102,22 @@ function projectThroughPortal(portal,entry_point,depth) {
 		close();
 		return;
 	}
+	
+	local repositioning = reposition(entry_point,getPositionO(portal),getPositionO(projector));
+	local transformation = portalTransformationMatrix(portal,projector);
+	repositioning.forward = transformation*entry_point.forward;
+	repositioning.up = transformation*entry_point.up;
+	repositioning.left = transformation*entry_point.left;
+	
+	/*printl("Expected forward: "+projector.GetForwardVector());
+	printl("Expected left: "+projector.GetLeftVector());
+	printl("Expected up: "+projector.GetUpVector());
+	printl("Calculated forward: "+repositioning.forward);
+	printl("Calculated left: "+repositioning.left);
+	printl("Calculated up: "+repositioning.up);*/
+	printl("Expected angles: "+projector.GetAngles());
 
-	project(reposition(entry_point,getPositionO(portal),getPositionO(projector)),depth);
+	project(repositioning,depth);
 }
 
 function getDoorCenter() {
@@ -170,6 +212,7 @@ function xAvailable(projector) {
 
 function project(projector,depth) {
 	//close();
+	if (depth > 5) { return; } //Avoid infinite recursion
 
 	local dir = projector.forward;
 	local origin = projector.center;
@@ -215,16 +258,22 @@ function project(projector,depth) {
 	EntGroup.projector_end_template.GetScriptScope().projecting_entity <- projector;
 	EntGroup.projector_end_spawner.SpawnEntity();
 
+	local ang = makeAngles(projector);
+	//printl("Got angles: "+ang);
+	local anginv = makeAngles({forward = projector.forward*-1,left = projector.left*-1, up = projector.up});
+	//Vector(ang.x-180,ang.y*-1,ang.z);
+	
+
 	hit = TraceAll(origin+dir*4,dir*-1,4)/4;
 	local dist = (1-hit)*4;
 	EntGroup.door_entry.SetOrigin(origin-dir);
 	EntGroup.door_exit.SetOrigin(origin+dir*dist+dir);
-	EntGroup.door_entry.SetForwardVector(dir*-1);
-	EntGroup.door_exit.SetForwardVector(dir);
+	setAngles(EntGroup.door_entry,anginv);
+	setAngles(EntGroup.door_exit,ang);
 	EntFireByHandle(EntGroup.door_branch,"SetValueTest","1",0,null,null);
 	if (dist > 2) {
 		EntGroup.door_frame.SetOrigin(origin+dir*(dist/2));
-		EntGroup.door_frame.SetForwardVector(dir);
+		setAngles(EntGroup.door_frame,ang);
 		EntFireByHandle(EntGroup.door_frame,"Enable","",0.01,null,null);
 	}
 
