@@ -22,3 +22,17 @@ $sequence "idle" {
 	fadeout 0.2
 	fps 30
 }
+
+$sequence "explodeIn" {
+	"door_projector_anims\idle.smd"
+	fadein 0.2
+	fadeout 0.2
+	fps 30
+}
+
+$sequence "explodeOut" {
+	"door_projector_anims\idle.smd"
+	fadein 0.2
+	fadeout 0.2
+	fps 30
+}
