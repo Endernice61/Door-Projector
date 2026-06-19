@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 function isVector(vec) {
 	return vec.tostring == Vector(1,0,0).tostring;
 }
@@ -43,6 +44,19 @@ getroottable().Matrix <- class {
 	function Clone() {
 		return Matrix([clone(matrix[0]),clone(matrix[1]),clone(matrix[2])]);
 	}
+=======
+class Matrix {
+	static IDENTITY = [[1,0,0],[0,1,0],[0,0,1]];
+	matrix = null;
+	constructor(...) {
+		try {
+			matrix = vargv[0];
+		} catch (error) {
+			matrix = IDENTITY;
+		}
+		//throw("Wrong number of parameters");
+	}
+>>>>>>> 093396d (Add matrix class)
 	function vector(arr) {
 		if (arr.len() != 3) { throw("Cannot convert array to vector"); }
 		return Vector(arr[0],arr[1],arr[2]);
@@ -51,6 +65,7 @@ getroottable().Matrix <- class {
 		return [vector(matrix[0]),vector(matrix[1]),vector(matrix[2])];
 	}
 	function _mul(other) {
+<<<<<<< HEAD
 		//printl("Multiplying..");
 		if (other instanceof Vector) {
 			//printl("Multiplying against Vector...");
@@ -79,5 +94,12 @@ getroottable().Matrix <- class {
 			s += "]\n";
 		}
 		return s;
+=======
+		if (other instanceof Vector) {
+			local m = getVectorMatrix();
+			return Vector(other.Dot(m[0]),other.Dot(m[1]),other.Dot(m[2]));
+		}
+		throw("Unknown multiplication operation");
+>>>>>>> 093396d (Add matrix class)
 	}
 }
