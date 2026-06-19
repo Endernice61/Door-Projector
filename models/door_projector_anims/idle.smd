@@ -1,10 +1,16 @@
 version 1
 nodes
   0 "root" -1
+<<<<<<< HEAD
   1 "lights" 0
+=======
+>>>>>>> 99a0a72 (Making puzzlemaker models)
 end
 skeleton
   time 0
     0 0.000000 0.000000 0.000000 1.570792 0.000000 0.000000
+<<<<<<< HEAD
     1 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+=======
+>>>>>>> 99a0a72 (Making puzzlemaker models)
 end
