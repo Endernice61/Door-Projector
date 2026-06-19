@@ -115,7 +115,7 @@ function projectThroughPortal(portal,entry_point,depth) {
 	printl("Calculated forward: "+repositioning.forward);
 	printl("Calculated left: "+repositioning.left);
 	printl("Calculated up: "+repositioning.up);*/
-	printl("Expected angles: "+projector.GetAngles());
+	//printl("Expected angles: "+projector.GetAngles());
 
 	project(repositioning,depth);
 }
