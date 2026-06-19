@@ -8,6 +8,7 @@ EntityGroup:
 5: projector_end_spawner(env_entity_maker) - Idk how to turn beams off lol so I just spawn and kill them. This spawns the beams connecting to the door's corners
 6: projector_beam_template(point_template) - Template for the beam spawned by projector_beam_spawner
 7: door_frame(func_brush) - Frame for the side
+8: projector_end_template(point_template) - Template for the end beams
 */
 
 EntGroup <- {
@@ -18,7 +19,8 @@ EntGroup <- {
 	door_branch = EntityGroup[4],
 	projector_end_spawner = EntityGroup[5],
 	projector_beam_template = EntityGroup[6],
-	door_frame = EntityGroup[7]
+	door_frame = EntityGroup[7],
+	projector_end_template = EntityGroup[8]
 }
 
 function PostSpawn() {
@@ -27,6 +29,8 @@ function PostSpawn() {
 	
 	EntGroup.projector_beam_template.ValidateScriptScope();
 	EntGroup.projector_beam_template.GetScriptScope().door_projector <- self;
+	EntGroup.projector_end_template.ValidateScriptScope();
+	EntGroup.projector_end_template.GetScriptScope().door_projector <- self;
 }
 
 beams <- [];
@@ -207,9 +211,8 @@ function project(projector,depth) {
 	
 	EntFireByHandle(beams[depth],"SetLocalOrigin",(projector.forward*(hit-64)).ToKVString(),0,null,null);
 
-	::temp_spawner <- self;
-	::temp_projector <- projector;
-	::temp_distance <- hit;
+	EntGroup.projector_end_template.GetScriptScope().door_projector <- self;
+	EntGroup.projector_end_template.GetScriptScope().projecting_entity <- projector;
 	EntGroup.projector_end_spawner.SpawnEntity();
 
 	hit = TraceAll(origin+dir*4,dir*-1,4)/4;
@@ -227,9 +230,9 @@ function project(projector,depth) {
 
 	
 	//Test entry bottom clip
-	if (TraceAll(origin-dir-projector.up*56,projector.up*-1,9) < 9) EntFireByHandle(EntityGroup[4],"FireUser3","",0,null,null);
+	if (TraceAll(origin-dir-projector.up*56,projector.up*-1,9) < 9) EntFireByHandle(EntGroup.door_branch,"FireUser3","",0,null,null);
 
 	//Test exit bottom clip
-	if (TraceAll(origin+dir*(1+dist)-projector.up*56,projector.up*-1,9) < 9) EntFireByHandle(EntityGroup[4],"FireUser1","",0,null,null);
+	if (TraceAll(origin+dir*(1+dist)-projector.up*56,projector.up*-1,9) < 9) EntFireByHandle(EntGroup.door_branch,"FireUser1","",0,null,null);
 	
 }
