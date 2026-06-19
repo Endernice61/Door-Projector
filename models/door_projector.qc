@@ -11,6 +11,7 @@ $cdmaterials "models/props_map_editor/plastic"
 $cdmaterials "models/props_map_editor/lights"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 $collisionmodel "door_projector_phys.smd"
 {
@@ -22,6 +23,8 @@ $collisionmodel "door_projector_phys.smd"
 
 
 >>>>>>> 99a0a72 (Making puzzlemaker models)
+=======
+>>>>>>> cc621c0 (Remove collision model)
 $sequence "idle" {
 	"door_projector_anims\idle.smd"
 	fadein 0.2
