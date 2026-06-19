@@ -44,6 +44,8 @@ function reposition(position,source,out) {
 	local left_origin = source.left.Dot(relative);
 	local up_origin = source.up.Dot(relative);
 	reposition.center += out.up*up_origin-out.left*left_origin;
+	
+	source.forward
 
 	return reposition;
 }
