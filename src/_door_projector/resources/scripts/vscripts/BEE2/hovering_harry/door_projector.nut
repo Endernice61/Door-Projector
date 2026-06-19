@@ -255,6 +255,7 @@ function project(projector,depth) {
 	EntFireByHandle(beams[depth],"SetLocalOrigin",(projector.forward*(hit-64)).ToKVString(),0,null,null);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	EntGroup.projector_end_template.GetScriptScope().door_projector <- self;
 	EntGroup.projector_end_template.GetScriptScope().projecting_entity <- projector;
 	EntGroup.projector_end_spawner.SpawnEntity();
@@ -268,6 +269,10 @@ function project(projector,depth) {
 	::temp_spawner <- self;
 	::temp_projector <- projector;
 	::temp_distance <- hit;
+=======
+	EntGroup.projector_end_template.GetScriptScope().door_projector <- self;
+	EntGroup.projector_end_template.GetScriptScope().projecting_entity <- projector;
+>>>>>>> de9e3d3 (Make door_projector_end* obsolete)
 	EntGroup.projector_end_spawner.SpawnEntity();
 >>>>>>> 82f167b (Use cuboid function)
 
@@ -284,6 +289,7 @@ function project(projector,depth) {
 		EntFireByHandle(EntGroup.door_frame,"Enable","",0.01,null,null);
 	}
 
+<<<<<<< HEAD
 	function clip(offset,up,action) {
 		if (TraceAll(offset+up*56,up,9) < 9) {
 			EntFireByHandle(EntGroup.door_branch,action,"",0,null,null);
@@ -297,4 +303,13 @@ function project(projector,depth) {
 	clip(origin-dir,projector.up,"FireUser4");
 	//Exit top clip
 	clip(origin+dir*(1+dist),projector.up,"FireUser2");
+=======
+	
+	//Test entry bottom clip
+	if (TraceAll(origin-dir-projector.up*56,projector.up*-1,9) < 9) EntFireByHandle(EntGroup.door_branch,"FireUser3","",0,null,null);
+
+	//Test exit bottom clip
+	if (TraceAll(origin+dir*(1+dist)-projector.up*56,projector.up*-1,9) < 9) EntFireByHandle(EntGroup.door_branch,"FireUser1","",0,null,null);
+	
+>>>>>>> de9e3d3 (Make door_projector_end* obsolete)
 }
