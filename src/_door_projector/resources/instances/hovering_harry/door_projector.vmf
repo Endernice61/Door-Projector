@@ -4,6 +4,7 @@ versioninfo
 	"editorbuild" "8870"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	"mapversion" "1083"
 =======
 	"mapversion" "1080"
@@ -11,6 +12,9 @@ versioninfo
 =======
 	"mapversion" "1081"
 >>>>>>> ed8801c (Remove unnecessary vscript on beams)
+=======
+	"mapversion" "1082"
+>>>>>>> 55e9f45 (Hopefully fix parenting issue)
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -117,6 +121,7 @@ world
 	"id" "1"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	"mapversion" "1083"
 =======
 	"mapversion" "1080"
@@ -124,6 +129,9 @@ world
 =======
 	"mapversion" "1081"
 >>>>>>> ed8801c (Remove unnecessary vscript on beams)
+=======
+	"mapversion" "1082"
+>>>>>>> 55e9f45 (Hopefully fix parenting issue)
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
