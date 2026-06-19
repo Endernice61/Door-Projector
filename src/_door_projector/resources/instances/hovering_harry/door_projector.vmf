@@ -5,6 +5,7 @@ versioninfo
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	"mapversion" "1083"
 =======
 	"mapversion" "1080"
@@ -15,6 +16,9 @@ versioninfo
 =======
 	"mapversion" "1082"
 >>>>>>> 55e9f45 (Hopefully fix parenting issue)
+=======
+	"mapversion" "1083"
+>>>>>>> 75e9a68 (Fix rotation)
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -122,6 +126,7 @@ world
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	"mapversion" "1083"
 =======
 	"mapversion" "1080"
@@ -132,6 +137,9 @@ world
 =======
 	"mapversion" "1082"
 >>>>>>> 55e9f45 (Hopefully fix parenting issue)
+=======
+	"mapversion" "1083"
+>>>>>>> 75e9a68 (Fix rotation)
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
