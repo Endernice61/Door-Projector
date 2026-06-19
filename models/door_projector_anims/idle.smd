@@ -3,22 +3,34 @@ nodes
   0 "root" -1
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   1 "lights" 0
 =======
 >>>>>>> 99a0a72 (Making puzzlemaker models)
 =======
   1 "lights" 0
 >>>>>>> 3dc5b88 (Fix orientation)
+=======
+  1 "lights" 0
+=======
+>>>>>>> 99a0a72 (Making puzzlemaker models)
+>>>>>>> 76ecdff (Delete zip)
 end
 skeleton
   time 0
     0 0.000000 0.000000 0.000000 1.570792 0.000000 0.000000
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     1 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
 =======
 >>>>>>> 99a0a72 (Making puzzlemaker models)
 =======
     1 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
 >>>>>>> 3dc5b88 (Fix orientation)
+=======
+    1 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+=======
+>>>>>>> 99a0a72 (Making puzzlemaker models)
+>>>>>>> 76ecdff (Delete zip)
 end
