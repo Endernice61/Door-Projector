@@ -254,6 +254,7 @@ function project(projector,depth) {
 	
 	EntFireByHandle(beams[depth],"SetLocalOrigin",(projector.forward*(hit-64)).ToKVString(),0,null,null);
 
+<<<<<<< HEAD
 	EntGroup.projector_end_template.GetScriptScope().door_projector <- self;
 	EntGroup.projector_end_template.GetScriptScope().projecting_entity <- projector;
 	EntGroup.projector_end_spawner.SpawnEntity();
@@ -263,6 +264,12 @@ function project(projector,depth) {
 	local anginv = makeAngles({forward = projector.forward*-1,left = projector.left*-1, up = projector.up});
 	//Vector(ang.x-180,ang.y*-1,ang.z);
 	
+=======
+	::temp_spawner <- self;
+	::temp_projector <- projector;
+	::temp_distance <- hit;
+	EntGroup.projector_end_spawner.SpawnEntity();
+>>>>>>> 82f167b (Use cuboid function)
 
 	hit = TraceAll(origin+dir*4,dir*-1,4)/4;
 	local dist = (1-hit)*4;
