@@ -115,7 +115,11 @@ function projectThroughPortal(portal,entry_point,depth) {
 	printl("Calculated forward: "+repositioning.forward);
 	printl("Calculated left: "+repositioning.left);
 	printl("Calculated up: "+repositioning.up);*/
+<<<<<<< HEAD
 	//printl("Expected angles: "+projector.GetAngles());
+=======
+	printl("Expected angles: "+projector.GetAngles());
+>>>>>>> a30898f (Transform vectors through portals)
 
 	project(repositioning,depth);
 }
@@ -265,6 +269,7 @@ function project(projector,depth) {
 	local anginv = makeAngles({forward = projector.forward*-1,left = projector.left*-1, up = projector.up});
 	//Vector(ang.x-180,ang.y*-1,ang.z);
 	
+<<<<<<< HEAD
 =======
 	::temp_spawner <- self;
 	::temp_projector <- projector;
@@ -275,6 +280,8 @@ function project(projector,depth) {
 >>>>>>> de9e3d3 (Make door_projector_end* obsolete)
 	EntGroup.projector_end_spawner.SpawnEntity();
 >>>>>>> 82f167b (Use cuboid function)
+=======
+>>>>>>> a30898f (Transform vectors through portals)
 
 	hit = TraceAll(origin+dir*4,dir*-1,4)/4;
 	local dist = (1-hit)*4;
