@@ -28,6 +28,9 @@ $sequence "idle" {
 	fadeout 0.2
 	fps 30
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4d464b0 (Add explode anims)
 }
 
 $sequence "explodeIn" {
@@ -38,10 +41,17 @@ $sequence "explodeIn" {
 }
 
 $sequence "explodeOut" {
+<<<<<<< HEAD
 	"door_projector_anims\explodeOut.smd"
 	fadein 0.2
 	fadeout 0.2
 	fps 30
 =======
 >>>>>>> 99a0a72 (Making puzzlemaker models)
+=======
+	"door_projector_anims\idle.smd"
+	fadein 0.2
+	fadeout 0.2
+	fps 30
+>>>>>>> 4d464b0 (Add explode anims)
 }
