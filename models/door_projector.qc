@@ -7,15 +7,6 @@ $surfaceprop "glass"
 $cdmaterials "models/props_map_editor/plastic"
 $cdmaterials "models/props_map_editor/lights"
 
-$collisionmodel "door_projector_phys.smd"
-{
-	$automass
-	$concave
-	$remove2d
-	$maxconvexpieces 1000000
-}
-
-
 $sequence "idle" {
 	"door_projector_anims\idle.smd"
 	fadein 0.2
