@@ -1,6 +1,14 @@
 "Properties" {
 	"Authors" "Hovering Harry"
 	"Description" {
-		"" "Projects holes in thin geometry"
+		"" "Projects holes in thin geometry  "
+		"" "**Start Enabled** controls whether the door projector starts on or not"
+		"" ""
+		"" "Known issues: "
+		"" "* Cubes get stuck in the door easily"
+		"" "* Lasers get blocked by the door"
+		"" "* Door only opens on perpendicular geometry"
+		"" "* Beam ignores brush entities"
+		"" "* Autoportals opening do not update the door"
 		}
 }
