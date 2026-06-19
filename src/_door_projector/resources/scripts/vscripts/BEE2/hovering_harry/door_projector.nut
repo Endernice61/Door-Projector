@@ -274,6 +274,9 @@ function project(projector,depth) {
 	//Vector(ang.x-180,ang.y*-1,ang.z);
 	
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3ea68c7 (Use cuboid function)
 =======
 	::temp_spawner <- self;
 	::temp_projector <- projector;
@@ -284,8 +287,11 @@ function project(projector,depth) {
 >>>>>>> de9e3d3 (Make door_projector_end* obsolete)
 	EntGroup.projector_end_spawner.SpawnEntity();
 >>>>>>> 82f167b (Use cuboid function)
+<<<<<<< HEAD
 =======
 >>>>>>> a30898f (Transform vectors through portals)
+=======
+>>>>>>> 3ea68c7 (Use cuboid function)
 
 	hit = TraceAll(origin+dir*4,dir*-1,4)/4;
 	local dist = (1-hit)*4;
@@ -302,8 +308,11 @@ function project(projector,depth) {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 55c0994 (Do top clip logic)
+=======
+>>>>>>> 3ea68c7 (Use cuboid function)
 	function clip(offset,up,action) {
 		if (TraceAll(offset+up*56,up,9) < 9) {
 			EntFireByHandle(EntGroup.door_branch,action,"",0,null,null);
@@ -318,6 +327,9 @@ function project(projector,depth) {
 	//Exit top clip
 	clip(origin+dir*(1+dist),projector.up,"FireUser2");
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3ea68c7 (Use cuboid function)
 =======
 	
 	//Test entry bottom clip
@@ -327,6 +339,9 @@ function project(projector,depth) {
 	if (TraceAll(origin+dir*(1+dist)-projector.up*56,projector.up*-1,9) < 9) EntFireByHandle(EntGroup.door_branch,"FireUser1","",0,null,null);
 	
 >>>>>>> de9e3d3 (Make door_projector_end* obsolete)
+<<<<<<< HEAD
 =======
 >>>>>>> 55c0994 (Do top clip logic)
+=======
+>>>>>>> 3ea68c7 (Use cuboid function)
 }
