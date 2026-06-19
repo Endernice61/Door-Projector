@@ -116,10 +116,14 @@ function projectThroughPortal(portal,entry_point,depth) {
 	printl("Calculated left: "+repositioning.left);
 	printl("Calculated up: "+repositioning.up);*/
 <<<<<<< HEAD
+<<<<<<< HEAD
 	//printl("Expected angles: "+projector.GetAngles());
 =======
 	printl("Expected angles: "+projector.GetAngles());
 >>>>>>> a30898f (Transform vectors through portals)
+=======
+	//printl("Expected angles: "+projector.GetAngles());
+>>>>>>> eb0f205 (Fixed cuboid intersection algorithm)
 
 	project(repositioning,depth);
 }
