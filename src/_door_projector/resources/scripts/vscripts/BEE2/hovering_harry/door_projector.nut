@@ -290,6 +290,9 @@ function project(projector,depth) {
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 55c0994 (Do top clip logic)
 	function clip(offset,up,action) {
 		if (TraceAll(offset+up*56,up,9) < 9) {
 			EntFireByHandle(EntGroup.door_branch,action,"",0,null,null);
@@ -303,6 +306,7 @@ function project(projector,depth) {
 	clip(origin-dir,projector.up,"FireUser4");
 	//Exit top clip
 	clip(origin+dir*(1+dist),projector.up,"FireUser2");
+<<<<<<< HEAD
 =======
 	
 	//Test entry bottom clip
@@ -312,4 +316,6 @@ function project(projector,depth) {
 	if (TraceAll(origin+dir*(1+dist)-projector.up*56,projector.up*-1,9) < 9) EntFireByHandle(EntGroup.door_branch,"FireUser1","",0,null,null);
 	
 >>>>>>> de9e3d3 (Make door_projector_end* obsolete)
+=======
+>>>>>>> 55c0994 (Do top clip logic)
 }
