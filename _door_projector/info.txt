@@ -1,0 +1,14 @@
+"ID" "DOOR_PROJECTOR"
+"Name" "Door projector"
+"Desc" "Adds a new element which projects holes in geometry"
+"Item"
+{
+	"ID"  "ITEM_DOOR_PROJECTOR"
+	"Version"
+	{
+		"Styles"
+		{
+			"ANY_STYLE" "door_projector"
+		}
+	}
+}
