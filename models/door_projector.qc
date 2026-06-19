@@ -1,8 +1,11 @@
 $modelname "props_map_editor/hovering_harry/door_projector"
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 $staticprop
 >>>>>>> 99a0a72 (Making puzzlemaker models)
+=======
+>>>>>>> 3dc5b88 (Fix orientation)
 $casttextureshadows
 $origin 0 0 0 0
 $model mesh "door_projector.smd"
@@ -45,6 +48,7 @@ $sequence "explodeIn" {
 
 $sequence "explodeOut" {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	"door_projector_anims\explodeOut.smd"
 	fadein 0.2
 	fadeout 0.2
@@ -53,6 +57,9 @@ $sequence "explodeOut" {
 >>>>>>> 99a0a72 (Making puzzlemaker models)
 =======
 	"door_projector_anims\idle.smd"
+=======
+	"door_projector_anims\explodeOut.smd"
+>>>>>>> 3dc5b88 (Fix orientation)
 	fadein 0.2
 	fadeout 0.2
 	fps 30
