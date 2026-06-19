@@ -1,6 +1,6 @@
 "Item"
 {
-	"ItemClass"	"ItemBase"
+	"ItemClass"	"ItemLaserEmitter"
 	"Type"		"ITEM_DOOR_PROJECTOR"
 	"Editor"
 	{
@@ -8,11 +8,11 @@
 		"SubType"
 		{
 			"Name"				"Door Projector"
-			"Model" { "ModelName"		"bee2_pgun_pedestal_dual.3ds" }
+			"Model" { "ModelName"		"hovering_harry/door_projector.3ds" }
 			"Palette"
 			{
 				"Tooltip"		"DOOR PROJECTOR"
-				"Image"			"palette/BEE/portalgun_both.png"
+				"Image"			"palette/hovering_harry/door_projector.png"
 				"Position"		"4 2 0"
 			}
 			"Sounds"
