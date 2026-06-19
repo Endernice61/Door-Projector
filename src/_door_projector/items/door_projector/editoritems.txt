@@ -22,12 +22,6 @@
 			"SOUND_EDITING_DEACTIVATE"	"P2Editor.CollapseOther"
 			"SOUND_DELETED"			"P2Editor.RemoveOther"
 			}
-			"Animations"
-			{
-				"ANIM_IDLE"			"0"
-				"ANIM_EDITING_ACTIVATE"		"1"
-				"ANIM_EDITING_DEACTIVATE"	"2"
-			}
 		}
 		
 		"MovementHandle"	"HANDLE_4_DIRECTIONS"
