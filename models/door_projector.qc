@@ -1,5 +1,4 @@
 $modelname "props_map_editor/hovering_harry/door_projector"
-$staticprop
 $casttextureshadows
 $origin 0 0 0 0
 $model mesh "door_projector.smd"
@@ -22,7 +21,7 @@ $sequence "explodeIn" {
 }
 
 $sequence "explodeOut" {
-	"door_projector_anims\idle.smd"
+	"door_projector_anims\explodeOut.smd"
 	fadein 0.2
 	fadeout 0.2
 	fps 30
