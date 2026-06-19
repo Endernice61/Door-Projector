@@ -3,10 +3,14 @@ versioninfo
 	"editorversion" "400"
 	"editorbuild" "8870"
 <<<<<<< HEAD
+<<<<<<< HEAD
 	"mapversion" "1083"
 =======
 	"mapversion" "1080"
 >>>>>>> de9e3d3 (Make door_projector_end* obsolete)
+=======
+	"mapversion" "1081"
+>>>>>>> ed8801c (Remove unnecessary vscript on beams)
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -112,10 +116,14 @@ world
 {
 	"id" "1"
 <<<<<<< HEAD
+<<<<<<< HEAD
 	"mapversion" "1083"
 =======
 	"mapversion" "1080"
 >>>>>>> de9e3d3 (Make door_projector_end* obsolete)
+=======
+	"mapversion" "1081"
+>>>>>>> ed8801c (Remove unnecessary vscript on beams)
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
