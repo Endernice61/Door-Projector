@@ -7,12 +7,16 @@ versioninfo
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 3ea68c7 (Use cuboid function)
+=======
+>>>>>>> 4cba9e9 (Delete door_projector_end*)
 	"mapversion" "1083"
 =======
 	"mapversion" "1080"
 >>>>>>> de9e3d3 (Make door_projector_end* obsolete)
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 	"mapversion" "1081"
@@ -25,6 +29,11 @@ versioninfo
 >>>>>>> 75e9a68 (Fix rotation)
 =======
 >>>>>>> 3ea68c7 (Use cuboid function)
+=======
+=======
+	"mapversion" "1081"
+>>>>>>> ed8801c (Remove unnecessary vscript on beams)
+>>>>>>> 4cba9e9 (Delete door_projector_end*)
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -134,12 +143,16 @@ world
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 3ea68c7 (Use cuboid function)
+=======
+>>>>>>> 4cba9e9 (Delete door_projector_end*)
 	"mapversion" "1083"
 =======
 	"mapversion" "1080"
 >>>>>>> de9e3d3 (Make door_projector_end* obsolete)
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 	"mapversion" "1081"
@@ -152,6 +165,11 @@ world
 >>>>>>> 75e9a68 (Fix rotation)
 =======
 >>>>>>> 3ea68c7 (Use cuboid function)
+=======
+=======
+	"mapversion" "1081"
+>>>>>>> ed8801c (Remove unnecessary vscript on beams)
+>>>>>>> 4cba9e9 (Delete door_projector_end*)
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
