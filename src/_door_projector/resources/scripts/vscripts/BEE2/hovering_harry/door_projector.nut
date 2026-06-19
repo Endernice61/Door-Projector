@@ -129,16 +129,11 @@ function close() {
 }
 
 function canGoThroughPortal(e,pos) {
-	if (e.GetScriptScope().__pgun_active == 0) return false;
-	local relative = pos - e.GetOrigin();
-	if (fabs(e.GetForwardVector().Dot(relative)) >= 1) return false;
-	local dist = e.GetLeftVector().Dot(relative)
-	if (dist < e.GetBoundingMins().y) return false;
-	if (-dist > e.GetBoundingMaxs().y) return false;
-	dist = e.GetUpVector().Dot(relative);
-	if (dist < e.GetBoundingMins().z) return false;
-	if (-dist > e.GetBoundingMaxs().z) return false;
-	return true;
+	if (e.GetScriptScope().__pgun_active == 0) { return false; }
+	local cuboid = getCuboid(e);
+	cuboid.mins.x = -1;
+	cuboid.maxs.x = 1;
+	return cuboid.pointInside(pos);
 }
 
 function TraceAll(origin, dir, distance) {
@@ -151,13 +146,12 @@ function TraceAll(origin, dir, distance) {
 }
 
 function assignBeamTemplate(projector,hit) {
-	::temp_projector <- projector;
-	::temp_distance <- hit;
 	EntGroup.projector_beam_template.GetScriptScope().door_projector <- self;
 	EntGroup.projector_beam_template.GetScriptScope().projecting_entity <- projector;
 	EntGroup.projector_beam_template.GetScriptScope().distance <- hit;
 }
 
+//Empty space check in an X shape in a 28x52 area 4 units behind the wall
 function xAvailable(projector) {
 	local left = projector.left;
 	local up = projector.up;
@@ -208,13 +202,15 @@ function project(projector,depth) {
 	}
 	close();
 
-	//Empty space check in an X shape in a 28x52 area 2 units behind the wall
+	//Empty space check in an X shape in a 28x52 area 4 units behind the wall
 	if (!xAvailable(projector)) { return; }
 	
 	EntFireByHandle(beams[depth],"SetLocalOrigin",(projector.forward*(hit-64)).ToKVString(),0,null,null);
 
 	::temp_spawner <- self;
-	EntityGroup[5].SpawnEntity();
+	::temp_projector <- projector;
+	::temp_distance <- hit;
+	EntGroup.projector_end_spawner.SpawnEntity();
 
 	hit = TraceAll(origin+dir*4,dir*-1,4)/4;
 	local dist = (1-hit)*4;
