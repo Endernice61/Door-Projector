@@ -115,15 +115,7 @@ function projectThroughPortal(portal,entry_point,depth) {
 	printl("Calculated forward: "+repositioning.forward);
 	printl("Calculated left: "+repositioning.left);
 	printl("Calculated up: "+repositioning.up);*/
-<<<<<<< HEAD
-<<<<<<< HEAD
 	//printl("Expected angles: "+projector.GetAngles());
-=======
-	printl("Expected angles: "+projector.GetAngles());
->>>>>>> a30898f (Transform vectors through portals)
-=======
-	//printl("Expected angles: "+projector.GetAngles());
->>>>>>> eb0f205 (Fixed cuboid intersection algorithm)
 
 	project(repositioning,depth);
 }
@@ -262,8 +254,6 @@ function project(projector,depth) {
 	
 	EntFireByHandle(beams[depth],"SetLocalOrigin",(projector.forward*(hit-64)).ToKVString(),0,null,null);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 	EntGroup.projector_end_template.GetScriptScope().door_projector <- self;
 	EntGroup.projector_end_template.GetScriptScope().projecting_entity <- projector;
 	EntGroup.projector_end_spawner.SpawnEntity();
@@ -273,33 +263,6 @@ function project(projector,depth) {
 	local anginv = makeAngles({forward = projector.forward*-1,left = projector.left*-1, up = projector.up});
 	//Vector(ang.x-180,ang.y*-1,ang.z);
 	
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 3ea68c7 (Use cuboid function)
-=======
->>>>>>> 76ecdff (Delete zip)
-=======
-	::temp_spawner <- self;
-	::temp_projector <- projector;
-	::temp_distance <- hit;
-=======
-	EntGroup.projector_end_template.GetScriptScope().door_projector <- self;
-	EntGroup.projector_end_template.GetScriptScope().projecting_entity <- projector;
->>>>>>> de9e3d3 (Make door_projector_end* obsolete)
-	EntGroup.projector_end_spawner.SpawnEntity();
->>>>>>> 82f167b (Use cuboid function)
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a30898f (Transform vectors through portals)
-=======
->>>>>>> 3ea68c7 (Use cuboid function)
-=======
-=======
->>>>>>> a30898f (Transform vectors through portals)
->>>>>>> 76ecdff (Delete zip)
 
 	hit = TraceAll(origin+dir*4,dir*-1,4)/4;
 	local dist = (1-hit)*4;
@@ -314,18 +277,6 @@ function project(projector,depth) {
 		EntFireByHandle(EntGroup.door_frame,"Enable","",0.01,null,null);
 	}
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 55c0994 (Do top clip logic)
-=======
->>>>>>> 3ea68c7 (Use cuboid function)
-=======
-=======
->>>>>>> 55c0994 (Do top clip logic)
->>>>>>> 76ecdff (Delete zip)
 	function clip(offset,up,action) {
 		if (TraceAll(offset+up*56,up,9) < 9) {
 			EntFireByHandle(EntGroup.door_branch,action,"",0,null,null);
@@ -339,30 +290,4 @@ function project(projector,depth) {
 	clip(origin-dir,projector.up,"FireUser4");
 	//Exit top clip
 	clip(origin+dir*(1+dist),projector.up,"FireUser2");
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 3ea68c7 (Use cuboid function)
-=======
->>>>>>> 76ecdff (Delete zip)
-=======
-	
-	//Test entry bottom clip
-	if (TraceAll(origin-dir-projector.up*56,projector.up*-1,9) < 9) EntFireByHandle(EntGroup.door_branch,"FireUser3","",0,null,null);
-
-	//Test exit bottom clip
-	if (TraceAll(origin+dir*(1+dist)-projector.up*56,projector.up*-1,9) < 9) EntFireByHandle(EntGroup.door_branch,"FireUser1","",0,null,null);
-	
->>>>>>> de9e3d3 (Make door_projector_end* obsolete)
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 55c0994 (Do top clip logic)
-=======
->>>>>>> 3ea68c7 (Use cuboid function)
-=======
-=======
->>>>>>> 55c0994 (Do top clip logic)
->>>>>>> 76ecdff (Delete zip)
 }

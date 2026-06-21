@@ -2,44 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "8870"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 3ea68c7 (Use cuboid function)
-=======
->>>>>>> 4cba9e9 (Delete door_projector_end*)
-=======
->>>>>>> 76ecdff (Delete zip)
 	"mapversion" "1083"
-=======
-	"mapversion" "1080"
->>>>>>> de9e3d3 (Make door_projector_end* obsolete)
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-	"mapversion" "1081"
->>>>>>> ed8801c (Remove unnecessary vscript on beams)
-=======
-	"mapversion" "1082"
->>>>>>> 55e9f45 (Hopefully fix parenting issue)
-=======
-	"mapversion" "1083"
->>>>>>> 75e9a68 (Fix rotation)
-<<<<<<< HEAD
-=======
->>>>>>> 3ea68c7 (Use cuboid function)
-=======
-=======
-	"mapversion" "1081"
->>>>>>> ed8801c (Remove unnecessary vscript on beams)
->>>>>>> 4cba9e9 (Delete door_projector_end*)
-=======
->>>>>>> 76ecdff (Delete zip)
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -144,44 +107,7 @@ bgimages_plus
 world
 {
 	"id" "1"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 3ea68c7 (Use cuboid function)
-=======
->>>>>>> 4cba9e9 (Delete door_projector_end*)
-=======
->>>>>>> 76ecdff (Delete zip)
 	"mapversion" "1083"
-=======
-	"mapversion" "1080"
->>>>>>> de9e3d3 (Make door_projector_end* obsolete)
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-	"mapversion" "1081"
->>>>>>> ed8801c (Remove unnecessary vscript on beams)
-=======
-	"mapversion" "1082"
->>>>>>> 55e9f45 (Hopefully fix parenting issue)
-=======
-	"mapversion" "1083"
->>>>>>> 75e9a68 (Fix rotation)
-<<<<<<< HEAD
-=======
->>>>>>> 3ea68c7 (Use cuboid function)
-=======
-=======
-	"mapversion" "1081"
->>>>>>> ed8801c (Remove unnecessary vscript on beams)
->>>>>>> 4cba9e9 (Delete door_projector_end*)
-=======
->>>>>>> 76ecdff (Delete zip)
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
