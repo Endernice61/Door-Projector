@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 "src/_door_projector/_ucp_door_projector.bee_pack"
 src/_door_projector/_ucp_door_projector.bee_pack
 *.vmx
-=======
-"src/_door_projector/_ucp_door_projector.bee_pack" 
-<<<<<<< HEAD
->>>>>>> 8937995 (Ignore zip)
-=======
-*.vmx
->>>>>>> d40392e (Remove vmx files)
-=======
-"src/_door_projector/_ucp_door_projector.bee_pack"
-src/_door_projector/_ucp_door_projector.bee_pack
-*.vmx
->>>>>>> eb0f205 (Fixed cuboid intersection algorithm)
